@@ -1,9 +1,10 @@
-package br.com.currencyconverterapi.apicurrencyconverter.services;
+package br.com.currencyconverterapi.apicurrencyconverter.domain.services;
 
-import br.com.currencyconverterapi.apicurrencyconverter.dto.UserCreateDTO;
-import br.com.currencyconverterapi.apicurrencyconverter.dto.UserDto;
-import br.com.currencyconverterapi.apicurrencyconverter.entities.User;
-import br.com.currencyconverterapi.apicurrencyconverter.repositories.UserRepository;
+import br.com.currencyconverterapi.apicurrencyconverter.domain.dto.UserCreateDTO;
+import br.com.currencyconverterapi.apicurrencyconverter.domain.dto.UserDto;
+import br.com.currencyconverterapi.apicurrencyconverter.domain.entities.User;
+import br.com.currencyconverterapi.apicurrencyconverter.domain.exceptions.user.UserNotFoundException;
+import br.com.currencyconverterapi.apicurrencyconverter.infra.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,15 +29,19 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
-    public UserDto getById(long id) throws Exception {
+    public User getById(long id) throws Exception {
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new Exception());
-        return user.toDto();
+                .orElseThrow(() -> new UserNotFoundException());
+        return user;
     }
 
     public void delete(long id) throws Exception {
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new Exception());
+                .orElseThrow(() -> new UserNotFoundException());
         userRepository.delete(user);
+    }
+
+    public void deleteAll() {
+        userRepository.deleteAll();
     }
 }
