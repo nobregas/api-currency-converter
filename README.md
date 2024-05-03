@@ -1,15 +1,15 @@
-# Currency Converter
+# 🪙Currency Converter
 
 Api developed to do currency converter as a dev challenge. This currency converter avaible 
 4 currencys ( BRL, USD, EUR, JPY ).
 
-## Tech's
+## 🛠️Tech's
 - Spring Boot
 - Spring Data JPA
 - Swagger
 - Lombok
 
-## How to run
+## 🚀How to run
 - Clone git repository
 - Run: 
 ````
@@ -19,8 +19,8 @@ Api developed to do currency converter as a dev challenge. This currency convert
 The API can be acessed at <a href="http://localhost:8080">localhost:8080</a>
 The Swagger at <a href="http://localhost:8080/swagger-ui.html">localhost:8080/swagger-ui.html</a>
 
-## API Endpoints
-### Obs
+## 📚API Endpoints
+### 🗨️Obs
 The API automatically create two users when starts: <br>
 ``````
 {                                    {
@@ -30,7 +30,7 @@ The API automatically create two users when starts: <br>
 ``````
 <b>Important: The API deletes all users when start's again.</b>
 
-### Endpoints
+### 🎯Endpoints
 
 - Create Transaction
 ````
