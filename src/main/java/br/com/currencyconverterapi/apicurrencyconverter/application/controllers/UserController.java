@@ -1,8 +1,8 @@
-package br.com.currencyconverterapi.apicurrencyconverter.controllers;
+package br.com.currencyconverterapi.apicurrencyconverter.application.controllers;
 
-import br.com.currencyconverterapi.apicurrencyconverter.dto.UserCreateDTO;
-import br.com.currencyconverterapi.apicurrencyconverter.dto.UserDto;
-import br.com.currencyconverterapi.apicurrencyconverter.services.UserService;
+import br.com.currencyconverterapi.apicurrencyconverter.domain.dto.UserCreateDTO;
+import br.com.currencyconverterapi.apicurrencyconverter.domain.dto.UserDto;
+import br.com.currencyconverterapi.apicurrencyconverter.domain.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +24,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     public ResponseEntity<UserDto> getById(@PathVariable long id) throws Exception {
-        return ResponseEntity.ok(userService.getById(id));
+        return ResponseEntity.ok(userService.getById(id).toDto());
     }
 
     @PostMapping
