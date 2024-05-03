@@ -1,6 +1,6 @@
-package br.com.currencyconverterapi.apicurrencyconverter.dto;
+package br.com.currencyconverterapi.apicurrencyconverter.domain.dto;
 
-import br.com.currencyconverterapi.apicurrencyconverter.entities.User;
+import br.com.currencyconverterapi.apicurrencyconverter.domain.entities.User;
 
 public record UserCreateDTO(
         String name
