@@ -1,13 +1,13 @@
-package br.com.currencyconverterapi.apicurrencyconverter.entities;
+package br.com.currencyconverterapi.apicurrencyconverter.domain.entities;
 
-import br.com.currencyconverterapi.apicurrencyconverter.dto.UserDto;
+import br.com.currencyconverterapi.apicurrencyconverter.domain.dto.UserDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
